@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Personal music of Arda Sahiner">
+    <meta name="author" content="Arda Sahiner">
+
+    <title>Arda Sahiner || Music</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- <script type='text/javascript' src='http://www.midijs.net/lib/midi.js'></script> -->
+
+    <!-- Custom CSS -->
+    <link href="css/ardastyle.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200|Cabin" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Important Links -->
+    <link href="http://adsabs.harvard.edu/abs/2015APS..DMP.P5010F">
+    <link href="http://ardasahiner.me">
+    <link href="http://vstock.io">
+</head>
+
+<body class = "container" ng-app="musicWebsite" ng-controller="mainController as main">
+
+
+  <div class = "row ">
+    <div class = "dateTimeHeading">
+      <div class = "col-lg-6">
+        <h5 class = "postTitle">Arda's Test Post 3</h5>
+      </div>
+      <div class = "col-lg-6">
+        <h5 class = "date">9.7.16</h5>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <h2 id = "tracktime3" ng-if = "main.loadedList[3]">{{main.timeRemainingList[3]}} </h2>
+  </div>
+  <div class = "row">
+    <h2 ng-if = "!main.loadedList[3]">&nbsp;</h2>
+    <audio id ="audio3" ontimeupdate = "document.getElementById('tracktime3').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 3);">
+      <source src="./mp3_files/mptest3.mp3" type="audio/mpeg">
+      Your user agent does not support the HTML5 Audio element.
+    </audio>
+    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
+    <p class="player">
+          <span class = "buttonBox">
+            <a><i class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(3)" ng-if= "main.pausedList[3]"></i></a>
+            <a><i id = "pause2" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(3)" ng-if= "main.playingList[3]"></i></a>
+          </span>
+          <b>|</b>
+          <span class = "sliderBox" id = "sliderBox3" ng-click="addOnClick($event, 3)">
+            <a><i id = "slider3" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[3] + 'px'}"></i></a>
+          </span>
+          <span class = "endBar">
+            <b>|</b>
+          </span>
+    </p>
+  </div>
+
+  <hr class = "break">
+
+  <div class = "row ">
+    <div class = "dateTimeHeading">
+      <div class = "col-lg-6">
+        <h5 class = "postTitle">Arda's Test Post 2</h5>
+      </div>
+      <div class = "col-lg-6">
+        <h5 class = "date">9.6.16</h5>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <h2 id = "tracktime2" ng-if = "main.loadedList[2]">{{main.timeRemainingList[2]}} </h2>
+  </div>
+  <div class = "row">
+    <h2 ng-if = "!main.loadedList[2]">&nbsp;</h2>
+    <audio id ="audio2" ontimeupdate = "document.getElementById('tracktime2').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 2);">
+      <source src="./mp3_files/mptest2.mp3" type="audio/mpeg">
+      Your user agent does not support the HTML5 Audio element.
+    </audio>
+    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
+    <p class="player">
+          <span class = "buttonBox">
+            <a><i class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(2)" ng-if= "main.pausedList[2]"></i></a>
+            <a><i id = "pause2" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(2)" ng-if= "main.playingList[2]"></i></a>
+          </span>
+          <b>|</b>
+          <span class = "sliderBox" id = "sliderBox2" ng-click="addOnClick($event, 2)">
+            <a><i id = "slider2" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[2] + 'px'}"></i></a>
+          </span>
+          <span class = "endBar">
+            <b>|</b>
+          </span>
+    </p>
+  </div>
+
+  <hr class = "break">
+
+  <div class = "row ">
+    <div class = "dateTimeHeading">
+      <div class = "col-lg-6">
+        <h5 class = "postTitle">Arda's Test Post 1</h5>
+      </div>
+      <div class = "col-lg-6">
+        <h5 class = "date">9.6.16</h5>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <h2 id = "tracktime1" ng-if = "main.loadedList[1]">{{main.timeRemainingList[1]}} </h2>
+  </div>
+  <div class = "row">
+    <h2 ng-if = "!main.loadedList[1]">&nbsp;</h2>
+    <audio id ="audio1" ontimeupdate = "document.getElementById('tracktime1').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 1);">
+      <source src="./mp3_files/mptest1.mp3" type="audio/mpeg">
+      Your user agent does not support the HTML5 Audio element.
+    </audio>
+    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
+    <p class="player">
+          <span class = "buttonBox">
+            <a><i class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(1)" ng-if= "main.pausedList[1]"></i></a>
+            <a><i id = "pause1" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(1)" ng-if= "main.playingList[1]"></i></a>
+          </span>
+          <b>|</b>
+          <span class = "sliderBox" id = "sliderBox1" ng-click="addOnClick($event, 1)">
+            <a><i id = "slider1" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[1] + 'px'}"></i></a>
+          </span>
+          <span class = "endBar">
+            <b>|</b>
+          </span>
+    </p>
+  </div>
+
+  <hr class = "break">
+
+  <div class = "row ">
+    <div class = "dateTimeHeading">
+      <div class = "col-lg-6">
+        <h5 class = "postTitle">Arda's Test Post 0</h5>
+      </div>
+      <div class = "col-lg-6">
+        <h5 class = "date">9.6.16</h5>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <h2 id = "tracktime0" ng-if = "main.loadedList[0]">{{main.timeRemainingList[0]}} </h2>
+  </div>
+  <div class = "row">
+    <h2 ng-if = "!main.loadedList[0]">&nbsp;</h2>
+    <audio id ="audio0" ontimeupdate = "document.getElementById('tracktime0').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 0);">
+      <source src="./mp3_files/mptest0.mp3" type="audio/mpeg">
+      Your user agent does not support the HTML5 Audio element.
+    </audio>
+    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
+    <p class="player">
+          <span class = "buttonBox">
+            <a><i class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(0)" ng-if= "main.pausedList[0]"></i></a>
+            <a><i id = "pause0" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(0)" ng-if= "main.playingList[0]"></i></a>
+          </span>
+          <b>|</b>
+          <span class = "sliderBox" id = "sliderBox0" ng-click="addOnClick($event, 0)">
+            <a><i id = "slider0" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[0] + 'px'}"></i></a>
+          </span>
+          <span class = "endBar">
+            <b>|</b>
+          </span>
+    </p>
+  </div>
+
+  <hr class = "break">
+
+  <!-- jQuery -->
+  <script src="js/jquery.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/ardajs.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+
+  <!-- Angular script -->
+  <script src="app.js"></script>
+  <!-- <script src="app.routes.js"></script> -->
+  <!-- Import all controllers too -->
+  <script src="controllers/mainController.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <!-- <script src="js/grayscale.js"></script> -->
+</body>
+</html>
