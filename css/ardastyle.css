@@ -3,9 +3,33 @@ h2 {
   color: blue;
 }
 
-body {
 
-  font-family: 'Source Sans Pro', sans-serif;
+
+.intro {
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.intro .container {
+
+  padding-left: 0;
+}
+
+.hellotext {
+  font-family: 'Hind', sans-serif;
+  color: #BA0CC9;
+  display: inline !important;
+}
+
+body {
+  font-family: 'Source Sans Pro', 'Catamaran', sans-serif;
+}
+
+@media (min-width: 1000px) {
+  body {
+    background: url(../img/speckles4.png) repeat-x center fixed;
+  }
 }
 
 .postTitle {
@@ -14,10 +38,14 @@ body {
   /*font-family: 'Cabin', sans-serif;*/
   color: #3B3B3B;
   font-weight: bolder;
-  text-transform: uppercase;
+  text-transform: lowercase;;
+  display: inline !important;
 }
 
-.dateTimeHeading .col-lg-6 {
+.dateTimeHeading .col-lg-6,
+.dateTimeHeading .col-lg-4,
+.dateTimeHeading .col-lg-3,
+.dateTimeHeading .col-lg-2 {
 
   padding-left: 0;
   padding-right: 0;
@@ -32,6 +60,7 @@ body {
 .date {
   font-size: 12px;
   float: right;
+  display: inline !important;
 }
 
 .fa-ul{

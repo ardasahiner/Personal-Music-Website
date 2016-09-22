@@ -13,6 +13,13 @@ function moveSlider(ct, d, e, index) {
   angular.element('body').controller().updateSliderLeft(ct, d, e, index);
 }
 
+window.onkeydown = function(e) {
+    if(e.keyCode == 32) {
+        e.preventDefault();
+        return false;
+    }
+};
+
 
 var space = false;
 $(function() {

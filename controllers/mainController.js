@@ -3,33 +3,24 @@ angular.module('mainController', [])
 .controller('mainController', function($window, $scope) {
 
   var vm = this;
-  vm.audioList = [document.getElementById("audio0"), document.getElementById("audio1"), document.getElementById("audio2"), document.getElementById("audio3")];
-  vm.loadedList = [false, false, false, false];
-  vm.playingList = [false, false, false, false];
-  vm.pausedList = [true, true, true, true];
-  vm.durationList = [0, 0, 0, 0];
-  vm.timeRemainingList = [0, 0, 0, 0];
-  vm.activeAudio = document.getElementById("audio3"); // default to last
-  vm.activeAudioIndex = vm.audioList.length - 1; // default to last
-  $scope.sliderLeft = [0, 0, 0, 0];
-
+  vm.lastEndTime = 0
 
   vm.updateOnSpace =  function() {
-
     if(vm.playingList[vm.activeAudioIndex]) {
-
       vm.aud_pause(vm.activeAudioIndex);
     } else {
-
       vm.aud_play(vm.activeAudioIndex);
     }
-
   }
 
   vm.updateSliderLeft = function(ct, d, e, index) {
 
-    if (e) {
+    var current = Date.now() / 1000;
 
+    //assume nothing shorter than 2 secs
+    if (e && (current - vm.lastEndTime > 2)) {
+
+      vm.lastEndTime = current;
       vm.audioList[index].pause();
       vm.playingList[index] = false;
       vm.pausedList[index] = true;
@@ -37,6 +28,15 @@ angular.module('mainController', [])
       $scope.sliderLeft[index] = 0;
       $scope.$apply();
 
+      if (vm.activeAudioIndex > 0) {
+        vm.activeAudioIndex -= 1;
+        vm.activeAudio = vm.audioList[vm.activeAudioIndex];
+        vm.aud_play(vm.activeAudioIndex);
+      } else {
+
+        vm.activeAudioIndex = vm.audioList.length - 1;
+        vm.activeAudio = vm.audioList[vm.activeAudioIndex];
+      }
     } else {
 
       var element = document.getElementById('sliderBox' + index);
@@ -101,6 +101,30 @@ angular.module('mainController', [])
     }
   }
 
+  vm.startUp = function(numSongs) {
+
+    vm.audioList = [];
+    vm.loadedList = [];
+    vm.playingList = [];
+    vm.pausedList = [];
+    vm.durationList = [];
+    vm.timeRemainingList = [];
+    $scope.sliderLeft = [];
+
+    for (var i = 0; i < numSongs; i++) {
+      vm.audioList[i] = document.getElementById("audio" + i);
+      vm.loadedList[i] = false;
+      vm.playingList[i] = false;
+      vm.pausedList[i] = true;
+      vm.durationList[i] = 0;
+      vm.timeRemainingList[i] = 0;
+      $scope.sliderLeft[i] = 0;
+    }
+
+    vm.activeAudioIndex = numSongs - 1;
+    vm.activeAudio = vm.audioList[vm.activeAudioIndex]; // default to last
+  }
+
+  vm.startUp(6);
   vm.getDuration();
-  return vm;
 });
