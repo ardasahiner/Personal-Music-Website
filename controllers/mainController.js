@@ -15,28 +15,32 @@ angular.module('mainController', [])
 
   vm.updateSliderLeft = function(ct, d, e, index) {
 
-    var current = Date.now() / 1000;
 
     //assume nothing shorter than 2 secs
-    if (e && (current - vm.lastEndTime > 2)) {
+    if (e) {
 
-      vm.lastEndTime = current;
       vm.audioList[index].pause();
       vm.playingList[index] = false;
       vm.pausedList[index] = true;
       document.getElementById('tracktime' + index).innerHTML = Math.floor((vm.durationList[index]));
       $scope.sliderLeft[index] = 0;
+      var current = Date.now() / 1000;
       $scope.$apply();
 
-      if (vm.activeAudioIndex > 0) {
-        vm.activeAudioIndex -= 1;
-        vm.activeAudio = vm.audioList[vm.activeAudioIndex];
-        vm.aud_play(vm.activeAudioIndex);
-      } else {
+      if ((current - vm.lastEndTime > 2)){
+        vm.lastEndTime = current;
 
-        vm.activeAudioIndex = vm.audioList.length - 1;
-        vm.activeAudio = vm.audioList[vm.activeAudioIndex];
+        if (vm.activeAudioIndex > 0) {
+          vm.activeAudioIndex -= 1;
+          vm.activeAudio = vm.audioList[vm.activeAudioIndex];
+          vm.aud_play(vm.activeAudioIndex);
+        } else {
+
+          vm.activeAudioIndex = vm.audioList.length - 1;
+          vm.activeAudio = vm.audioList[vm.activeAudioIndex];
+        }
       }
+
     } else {
 
       var element = document.getElementById('sliderBox' + index);
