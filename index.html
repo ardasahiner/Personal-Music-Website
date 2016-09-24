@@ -61,17 +61,58 @@
 
   <!-- <hr class = "break"> -->
 
-
   <div class = "row ">
     <div class = "dateTimeHeading">
       <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3">
-        <h5 class = "postTitle">So Into You</h5>
+        <h5 class = "postTitle">Haunt me (x 3)</h5>
       </div>
       <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3">
         <h1 class = "hellotext">D</h1>
       </div>
       <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
           <h1 class = "hellotext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O </h1>
+          <h5 class = "date">9.23.16</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <h2 id = "tracktime6" ng-if = "main.loadedList[6]">{{main.timeRemainingList[6]}} </h2>
+  </div>
+  <div class = "row">
+    <h2 ng-if = "!main.loadedList[6]">&nbsp;</h2>
+    <audio id ="audio6" ontimeupdate = "document.getElementById('tracktime6').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 6);">
+      <source src="./mp3_files/mptest6.mp3" type="audio/mpeg">
+      Your user agent does not support the HTML5 Audio element.
+    </audio>
+    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
+    <p class="player">
+          <span class = "buttonBox">
+            <a><i class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(6)" ng-if= "main.pausedList[6]"></i></a>
+            <a><i id = "pause2" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(6)" ng-if= "main.playingList[6]"></i></a>
+          </span>
+          <b>|</b>
+          <span class = "sliderBox" id = "sliderBox6" ng-click="addOnClick($event, 6)">
+            <a><i id = "slider6" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[6] + 'px'}"></i></a>
+          </span>
+          <span class = "endBar">
+            <b>|</b>
+          </span>
+    </p>
+  </div>
+
+  <hr class = "break">
+
+
+  <div class = "row ">
+    <div class = "dateTimeHeading">
+      <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <h5 class = "postTitle">So Into You</h5>
+      </div>
+      <div class = "col-lg-2 col-md-2 col-sm-2 col-xs-2">
+        <h1 class = "hellotext">L</h1>
+      </div>
+      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
           <h5 class = "date">9.22.16</h5>
         </div>
       </div>
@@ -106,13 +147,11 @@
 
   <div class = "row ">
     <div class = "dateTimeHeading">
-      <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <h5 class = "postTitle">Six</h5>
       </div>
-      <div class = "col-lg-2 col-md-2 col-sm-2 col-xs-2">
-        <h1 class = "hellotext">L</h1>
-      </div>
       <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <h1 class = "hellotext">W </h1>
         <h5 class = "date">9.22.16</h5>
       </div>
     </div>
@@ -150,7 +189,6 @@
         <h5 class = "postTitle">PERFECT</h5>
       </div>
       <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h1 class = "hellotext">W </h1>
         <h5 class = "date">9.7.16</h5>
       </div>
     </div>
@@ -187,7 +225,10 @@
       <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <h5 class = "postTitle">Don't Know Why</h5>
       </div>
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
+      <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3" style = "text-align: right;">
+        <h1 class = "hellotext">O </h1>
+      </div>
+      <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3">
         <h5 class = "date">9.6.16</h5>
       </div>
     </div>
@@ -224,10 +265,7 @@
       <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <h5 class = "postTitle">Bitte Bitte Orca</h5>
       </div>
-      <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3" style = "text-align: right;">
-        <h1 class = "hellotext">O </h1>
-      </div>
-      <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <h5 class = "date">9.6.16</h5>
       </div>
     </div>
@@ -262,7 +300,7 @@
   <div class = "row ">
     <div class = "dateTimeHeading">
       <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "postTitle">Movement 3</h5>
+        <h5 class = "postTitle">At Your Best (You Are Love)</h5>
       </div>
       <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
         <h5 class = "date">9.6.16</h5>

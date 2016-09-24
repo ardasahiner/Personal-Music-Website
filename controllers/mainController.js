@@ -8,6 +8,7 @@ angular.module('mainController', [])
   vm.updateOnSpace =  function() {
     if(vm.playingList[vm.activeAudioIndex]) {
       vm.aud_pause(vm.activeAudioIndex);
+      console.log(vm.activeAudioIndex);
     } else {
       vm.aud_play(vm.activeAudioIndex);
     }
@@ -129,6 +130,6 @@ angular.module('mainController', [])
     vm.activeAudio = vm.audioList[vm.activeAudioIndex]; // default to last
   }
 
-  vm.startUp(6);
+  vm.startUp(7);
   vm.getDuration();
 });
