@@ -103,7 +103,7 @@ angular.module('mainController', [])
       } else if (vm.audioList[i].readyState == 0){
         setTimeout(function(){
           vm.getDuration();
-        }, 300);
+        }, 600);
         console.log(i + ' not ready!');
       }
     }
