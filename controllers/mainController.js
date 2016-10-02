@@ -3,12 +3,12 @@ angular.module('mainController', [])
 .controller('mainController', function($window, $scope) {
 
   var vm = this;
-  vm.lastEndTime = 0
+  vm.lastEndTime = 0;
+  var count = 0;
 
   vm.updateOnSpace =  function() {
     if(vm.playingList[vm.activeAudioIndex]) {
       vm.aud_pause(vm.activeAudioIndex);
-      console.log(vm.activeAudioIndex);
     } else {
       vm.aud_play(vm.activeAudioIndex);
     }
@@ -94,14 +94,17 @@ angular.module('mainController', [])
 
   vm.getDuration = function() {
     for (var i = 0; i < vm.audioList.length; i ++ ) {
-      vm.durationList[i] = vm.audioList[i].duration;
-      vm.timeRemainingList[i] = Math.floor(vm.audioList[i].duration - vm.audioList[i].currentTime);
-    }
-    for (var i = 0; i < vm.audioList.length; i ++ ) {
-      if (isNaN(vm.durationList[i])) {
-        $window.location.reload();
-      } else {
+      if (!vm.loadedList[i] && vm.audioList[i].readyState > 0) {
+        vm.durationList[i] = vm.audioList[i].duration;
+        vm.timeRemainingList[i] = Math.floor(vm.audioList[i].duration - vm.audioList[i].currentTime);
         vm.loadedList[i] = true;
+        console.log("loaded " + i);
+        $scope.$applyAsync();
+      } else if (vm.audioList[i].readyState == 0){
+        setTimeout(function(){
+          vm.getDuration();
+        }, 300);
+        console.log(i + ' not ready!');
       }
     }
   }
