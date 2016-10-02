@@ -28,7 +28,7 @@ body {
 
 @media (min-width: 1000px) {
   body {
-    background: url(../img/speckles4.png) repeat-x center fixed;
+    /*background: url(../img/speckles4.png) repeat-x center fixed;*/
   }
 }
 
@@ -45,7 +45,8 @@ body {
 .dateTimeHeading .col-lg-6,
 .dateTimeHeading .col-lg-4,
 .dateTimeHeading .col-lg-3,
-.dateTimeHeading .col-lg-2 {
+.dateTimeHeading .col-lg-2,
+.dateTimeHeading .col-lg-8 {
 
   padding-left: 0;
   padding-right: 0;

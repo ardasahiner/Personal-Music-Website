@@ -63,6 +63,80 @@
 
   <div class = "row ">
     <div class = "dateTimeHeading">
+      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <h5 class = "postTitle">way cool baby love</h5>
+      </div>
+      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <h5 class = "date">10.2.16</h5>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <h2 id = "tracktime8" ng-if = "main.loadedList[8]">{{main.timeRemainingList[8]}} </h2>
+  </div>
+  <div class = "row">
+    <h2 ng-if = "!main.loadedList[8]">&nbsp;</h2>
+    <audio id ="audio8" ontimeupdate = "document.getElementById('tracktime8').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 8);">
+      <source src="./mp3_files/mptest8.mp3" type="audio/mpeg">
+      Your user agent does not support the HTML5 Audio element.
+    </audio>
+    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
+    <p class="player">
+          <span class = "buttonBox">
+            <a><i class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(8)" ng-if= "main.pausedList[8]"></i></a>
+            <a><i id = "pause8" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(8)" ng-if= "main.playingList[8]"></i></a>
+          </span>
+          <b>|</b>
+          <span class = "sliderBox" id = "sliderBox8" ng-click="addOnClick($event, 8)">
+            <a><i id = "slider8" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[8] + 'px'}"></i></a>
+          </span>
+          <span class = "endBar">
+            <b>|</b>
+          </span>
+    </p>
+  </div>
+
+  <hr class = "break">
+
+  <div class = "row ">
+    <div class = "dateTimeHeading">
+      <div class = "col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <h5 class = "postTitle">sorry for not answering the phone, i'm too busy trying to fly away</h5>
+      </div>
+      <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <h5 class = "date">10.2.16</h5>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <h2 id = "tracktime7" ng-if = "main.loadedList[7]">{{main.timeRemainingList[7]}} </h2>
+  </div>
+  <div class = "row">
+    <h2 ng-if = "!main.loadedList[7]">&nbsp;</h2>
+    <audio id ="audio7" ontimeupdate = "document.getElementById('tracktime7').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 7);">
+      <source src="./mp3_files/mptest7.mp3" type="audio/mpeg">
+      Your user agent does not support the HTML5 Audio element.
+    </audio>
+    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
+    <p class="player">
+          <span class = "buttonBox">
+            <a><i class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(7)" ng-if= "main.pausedList[7]"></i></a>
+            <a><i id = "pause7" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(7)" ng-if= "main.playingList[7]"></i></a>
+          </span>
+          <b>|</b>
+          <span class = "sliderBox" id = "sliderBox7" ng-click="addOnClick($event, 7)">
+            <a><i id = "slider7" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[7] + 'px'}"></i></a>
+          </span>
+          <span class = "endBar">
+            <b>|</b>
+          </span>
+    </p>
+  </div>
+
+  <hr class = "break">
+
+  <div class = "row ">
+    <div class = "dateTimeHeading">
       <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3">
         <h5 class = "postTitle">Haunt me (x 3)</h5>
       </div>
@@ -89,7 +163,7 @@
     <p class="player">
           <span class = "buttonBox">
             <a><i class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(6)" ng-if= "main.pausedList[6]"></i></a>
-            <a><i id = "pause2" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(6)" ng-if= "main.playingList[6]"></i></a>
+            <a><i id = "pause6" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(6)" ng-if= "main.playingList[6]"></i></a>
           </span>
           <b>|</b>
           <span class = "sliderBox" id = "sliderBox6" ng-click="addOnClick($event, 6)">
@@ -131,7 +205,7 @@
     <p class="player">
           <span class = "buttonBox">
             <a><i class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(5)" ng-if= "main.pausedList[5]"></i></a>
-            <a><i id = "pause2" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(5)" ng-if= "main.playingList[5]"></i></a>
+            <a><i id = "pause5" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(5)" ng-if= "main.playingList[5]"></i></a>
           </span>
           <b>|</b>
           <span class = "sliderBox" id = "sliderBox5" ng-click="addOnClick($event, 5)">
@@ -169,7 +243,7 @@
     <p class="player">
           <span class = "buttonBox">
             <a><i class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(4)" ng-if= "main.pausedList[4]"></i></a>
-            <a><i id = "pause2" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(4)" ng-if= "main.playingList[4]"></i></a>
+            <a><i id = "pause4" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(4)" ng-if= "main.playingList[4]"></i></a>
           </span>
           <b>|</b>
           <span class = "sliderBox" id = "sliderBox4" ng-click="addOnClick($event, 4)">
@@ -206,7 +280,7 @@
     <p class="player">
           <span class = "buttonBox">
             <a><i class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(3)" ng-if= "main.pausedList[3]"></i></a>
-            <a><i id = "pause2" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(3)" ng-if= "main.playingList[3]"></i></a>
+            <a><i id = "pause3" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(3)" ng-if= "main.playingList[3]"></i></a>
           </span>
           <b>|</b>
           <span class = "sliderBox" id = "sliderBox3" ng-click="addOnClick($event, 3)">
