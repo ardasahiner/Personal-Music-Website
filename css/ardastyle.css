@@ -3,8 +3,6 @@ h2 {
   color: blue;
 }
 
-
-
 .intro {
 
   margin-top: 20px;
@@ -23,6 +21,7 @@ h2 {
 }
 
 body {
+  padding-top: 20px;
   font-family: 'Source Sans Pro', 'Catamaran', sans-serif;
 }
 
