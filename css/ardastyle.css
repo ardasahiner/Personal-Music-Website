@@ -103,6 +103,7 @@ body {
 .buttonBox {
   display: inline-block;
   width: 20px !important;
+  cursor:pointer;
 }
 
 .sliderBox{
