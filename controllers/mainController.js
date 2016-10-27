@@ -93,6 +93,7 @@ angular.module('mainController', [])
   };
 
   vm.getDuration = function() {
+    console.log(vm.audioList);
     for (var i = 0; i < vm.audioList.length; i ++ ) {
       if (!vm.loadedList[i] && vm.audioList[i].readyState > 0) {
         vm.durationList[i] = vm.audioList[i].duration;
