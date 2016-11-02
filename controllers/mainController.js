@@ -6,6 +6,50 @@ angular.module('mainController', [])
   vm.lastEndTime = 0;
   var count = 0;
 
+
+  vm.updateOnRight = function() {
+    if (vm.playingList[vm.activeAudioIndex]) {
+      vm.aud_pause(vm.activeAudioIndex);
+      if (vm.activeAudioIndex > 0) {
+
+        vm.aud_play(vm.activeAudioIndex - 1);
+      } else {
+        vm.aud_play(vm.audioList.length - 1);
+      }
+    } else {
+      if (vm.activeAudioIndex > 0) {
+
+        vm.activeAudioIndex = vm.activeAudioIndex - 1;
+      } else {
+        vm.activeAudioIndex = 0;
+      }
+      vm.activeAudio = vm.audioList[vm.activeAudioIndex];
+    }
+
+    $scope.$applyAsync();
+  }
+
+  vm.updateOnLeft = function() {
+
+    var prevTime = vm.activeAudio.currentTime;
+    vm.activeAudio.currentTime = 0;
+
+    if (prevTime < 1) {
+
+      if (vm.playingList[vm.activeAudioIndex]) {
+        vm.aud_pause(vm.activeAudioIndex);
+        vm.aud_play((vm.activeAudioIndex + 1) % vm.audioList.length);
+      } else {
+
+        vm.activeAudioIndex = (vm.activeAudioIndex + 1) % vm.audioList.length;
+        vm.activeAudio = vm.audioList[vm.activeAudioIndex];
+      }
+    }
+
+    $scope.$applyAsync();
+  }
+
+
   vm.updateOnSpace =  function() {
     if(vm.playingList[vm.activeAudioIndex]) {
       vm.aud_pause(vm.activeAudioIndex);
