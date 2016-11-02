@@ -133,6 +133,6 @@ angular.module('mainController', [])
     vm.activeAudio = vm.audioList[vm.activeAudioIndex]; // default to last
   }
 
-  vm.startUp(11);
+  vm.startUp(12);
   vm.getDuration();
 });
