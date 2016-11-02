@@ -98,13 +98,11 @@ angular.module('mainController', [])
         vm.durationList[i] = vm.audioList[i].duration;
         vm.timeRemainingList[i] = Math.floor(vm.audioList[i].duration - vm.audioList[i].currentTime);
         vm.loadedList[i] = true;
-        console.log("loaded " + i);
         $scope.$applyAsync();
       } else if (vm.audioList[i].readyState == 0){
         setTimeout(function(){
           vm.getDuration();
         }, 600);
-        console.log(i + ' not ready!');
       }
     }
   }
