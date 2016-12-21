@@ -70,7 +70,7 @@ angular.module('mainController', [])
       document.getElementById('tracktime' + index).innerHTML = Math.floor((vm.durationList[index]));
       $scope.sliderLeft[index] = 0;
       var current = Date.now() / 1000;
-      $scope.$apply();
+      $scope.$applyAsync();
 
       if ((current - vm.lastEndTime > 2)){
         vm.lastEndTime = current;
@@ -93,7 +93,7 @@ angular.module('mainController', [])
       var width = style.getPropertyValue('width');
       var widthInt = width.substring(0, width.length - 2);
       $scope.sliderLeft[index] = (ct / d) * widthInt;
-      $scope.$apply();
+      $scope.$applyAsync();
     }
   };
 
@@ -146,7 +146,7 @@ angular.module('mainController', [])
       } else if (vm.audioList[i].readyState == 0){
         setTimeout(function(){
           vm.getDuration();
-        }, 600);
+        }, 1000);
       }
     }
   }
@@ -175,6 +175,6 @@ angular.module('mainController', [])
     vm.activeAudio = vm.audioList[vm.activeAudioIndex]; // default to last
   }
 
-  vm.startUp(13);
+  vm.startUp(14);
   vm.getDuration();
 });
