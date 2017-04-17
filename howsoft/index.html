@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Arda Sahiner">
+
+    <title>M | Arda</title>
+
+    <link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <!-- <script type='text/javascript' src='http://www.midijs.net/lib/midi.js'></script> -->
+
+    <!-- Custom CSS -->
+    <link href="../css/ardastyle.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200|Hind" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Important Links -->
+    <link href="http://adsabs.harvard.edu/abs/2015APS..DMP.P5010F">
+    <link href="http://ardasahiner.me">
+    <link href="http://vstock.io">
+</head>
+
+<body class = "container" ng-app="alt" ng-controller="howsoft as main">
+
+  <header class="intro">
+      <div class="intro-body">
+          <div class="container">
+              <div class="row">
+                </h1>
+              </div>
+          </div>
+      </div>
+  </header>
+
+  <!-- <hr class = "break"> -->
+  <div class = "row ">
+    <div class = "dateTimeHeading">
+      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <h5 class = "postTitle">how soft</h5>
+      </div>
+      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        <h5 class = "date">4.17.17</h5>
+      </div>
+    </div>
+  </div>
+  <div class = "row">
+    <h2 id = "tracktime0" ng-if = "main.loadedList[0]">{{main.timeRemainingList[0]}} </h2>
+  </div>
+  <div class = "row">
+    <h2 ng-if = "!main.loadedList[0]">&nbsp;</h2>
+    <audio id ="audio0" ontimeupdate = "document.getElementById('tracktime0').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 0);">
+      <source src="../mp3_files/howsoft.mp3" type="audio/mpeg">
+      Your user agent does not support the HTML5 Audio element.
+    </audio>
+    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
+    <p class="player">
+          <span class = "buttonBox">
+            <a><i class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(0)" ng-if= "main.pausedList[0]"></i></a>
+            <a><i id = "pause0" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(0)" ng-if= "main.playingList[0]"></i></a>
+          </span>
+          <b>|</b>
+          <span class = "sliderBox" id = "sliderBox0" ng-click="addOnClick($event, 0)">
+            <a><i id = "slider0" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[0] + 'px'}"></i></a>
+          </span>
+          <span class = "endBar">
+            <b>|</b>
+          </span>
+    </p>
+  </div>
+
+  <footer id="footer" class="contact content-section text-center">
+      <div class="container text-center">
+        <br></br><br></br><br></br><br></br>
+      </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="../js/jquery.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/ardajs.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="../js/jquery.easing.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+
+  <!-- Angular script -->
+  <script src="../app.js"></script>
+  <!-- <script src="app.routes.js"></script> -->
+  <!-- Import all controllers too -->
+  <script src="../controllers/howsoft.js"></script>
+  <!-- <script src="../controllers/mainController.js"></script> -->
+
+
+  <!-- Custom Theme JavaScript -->
+  <!-- <script src="js/grayscale.js"></script> -->
+</body>
+</html>
