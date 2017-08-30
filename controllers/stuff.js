@@ -8,7 +8,6 @@ angular.module('stuff', [])
 
   vm.onFirstClick = function() {
     for (index = 0; index < vm.audioList.length; index ++) {
-      console.log(index);
       if (index != vm.activeAudioIndex || !vm.playingList[vm.activeAudioIndex]) {
         vm.audioList[index].play();
         vm.audioList[index].pause();
