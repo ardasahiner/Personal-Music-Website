@@ -12,7 +12,6 @@ angular.module('stuff', [])
       if (index != vm.activeAudioIndex || !vm.playingList[vm.activeAudioIndex]) {
         vm.audioList[index].play();
         vm.audioList[index].pause();
-        vm.audioList[index].currentTime = 0;
       }
     }
   }
