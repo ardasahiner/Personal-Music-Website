@@ -51,9 +51,6 @@ $(function() {
 });
 
 
-
-
-
 var space = false;
 $(function() {
   $(document).keyup(function(evt) {

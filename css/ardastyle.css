@@ -3,6 +3,10 @@ h2 {
   color: blue;
 }
 
+.stufftext a{
+  color: black;
+}
+
 .intro {
 
   margin-top: 20px;

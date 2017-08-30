@@ -60,7 +60,6 @@ angular.module('mainController', [])
 
   vm.updateSliderLeft = function(ct, d, e, index) {
 
-
     //assume nothing shorter than 2 secs
     if (e) {
 
@@ -78,7 +77,7 @@ angular.module('mainController', [])
         if (vm.activeAudioIndex > 0) {
           vm.activeAudioIndex -= 1;
           vm.activeAudio = vm.audioList[vm.activeAudioIndex];
-          vm.aud_play(vm.activeAudioIndex);
+          $('#play'+vm.activeAudioIndex).trigger('click');
         } else {
 
           vm.activeAudioIndex = vm.audioList.length - 1;
