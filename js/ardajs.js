@@ -1,4 +1,5 @@
 function eventFire(el, etype){
+  console.log('yah');
   if (el.fireEvent) {
     el.fireEvent('on' + etype);
   } else {
@@ -19,7 +20,6 @@ window.onkeydown = function(e) {
     }
 };
 
-
 var rightArrow = false;
 $(function() {
   $(document).keyup(function(evt) {
@@ -33,7 +33,6 @@ $(function() {
     }
   });
 });
-
 
 
 var leftArrow = false;

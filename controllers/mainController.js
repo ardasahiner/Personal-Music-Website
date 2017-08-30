@@ -77,7 +77,7 @@ angular.module('mainController', [])
         if (vm.activeAudioIndex > 0) {
           vm.activeAudioIndex -= 1;
           vm.activeAudio = vm.audioList[vm.activeAudioIndex];
-          $('#play'+vm.activeAudioIndex).trigger('click');
+          document.getElementById('play'+vm.activeAudioIndex).click();
         } else {
 
           vm.activeAudioIndex = vm.audioList.length - 1;
