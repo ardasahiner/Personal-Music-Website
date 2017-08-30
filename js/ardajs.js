@@ -1,5 +1,12 @@
+var numClicks = 0;
+$(window).click(function() {
+  numClicks++;
+  if (numClicks === 1) {
+    angular.element('body').controller().onFirstClick();
+  }
+});
+
 function eventFire(el, etype){
-  console.log('yah');
   if (el.fireEvent) {
     el.fireEvent('on' + etype);
   } else {

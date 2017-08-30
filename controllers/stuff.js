@@ -6,6 +6,16 @@ angular.module('stuff', [])
   vm.lastEndTime = 0;
   var count = 0;
 
+  vm.onFirstClick = function() {
+    for (index = 0; index < vm.audioList.length; index ++) {
+      console.log(index);
+      if (index != vm.activeAudioIndex || !vm.playingList[vm.activeAudioIndex]) {
+        vm.audioList[index].play();
+        vm.audioList[index].pause();
+        vm.audioList[index].currentTime = 0;
+      }
+    }
+  }
 
   vm.updateOnRight = function() {
     if (vm.playingList[vm.activeAudioIndex]) {
