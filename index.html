@@ -8,9 +8,10 @@
     <meta name="description" content="Personal music of Arda Sahiner">
     <meta name="author" content="Arda Sahiner">
 
-    <title>M | Arda</title>
+    <title>Music | Arda</title>
 
-    <link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- <script type='text/javascript' src='http://www.midijs.net/lib/midi.js'></script> -->
@@ -34,27 +35,8 @@
       <div class="intro-body">
           <div class="container">
               <div class="row">
-                <h2 class = "stufftext">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <a href="/Personal-Music-Website/stuff">stuff</a>
-                </h2>
                 <h1 class = "hellotext">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;H
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L
-                  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  L
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  E
+                  <a href="/Personal-Music-Website/stuff">HEY</a>
                   <br>
                 </h1>
               </div>
@@ -64,544 +46,46 @@
 
   <!-- <hr class = "break"> -->
 
-  <div class = "row ">
-    <div class = "dateTimeHeading">
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "postTitle">cl0ser</h5>
-      </div>
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "date">12.21.16</h5>
-      </div>
-    </div>
-  </div>
-  <div class = "row">
-    <h2 id = "tracktime13" ng-if = "main.loadedList[13]">{{main.timeRemainingList[13]}} </h2>
-  </div>
-  <div class = "row">
-    <h2 ng-if = "!main.loadedList[13]">&nbsp;</h2>
-    <audio id ="audio13" ontimeupdate = "document.getElementById('tracktime13').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 13);">
-      <source src="./mp3_files/mptest13.mp3" type="audio/mpeg">
-      Your user agent does not support the HTML5 Audio element.
-    </audio>
-    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
-    <p class="player">
-          <span class = "buttonBox">
-            <a><i id = "play13" class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(13)" ng-if= "main.pausedList[13]"></i></a>
-            <a><i id = "pause13" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(13)" ng-if= "main.playingList[13]"></i></a>
-          </span>
-          <b>|</b>
-          <span class = "sliderBox" id = "sliderBox13" ng-click="addOnClick($event, 13)">
-            <a><i id = "slider13" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[13] + 'px'}"></i></a>
-          </span>
-          <span class = "endBar">
-            <b>|</b>
-          </span>
-    </p>
-  </div>
-
-  <hr class = "break">
-
-  <div class = "row ">
-    <div class = "dateTimeHeading">
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "postTitle">melrose</h5>
-      </div>
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "date">11.21.16</h5>
-      </div>
-    </div>
-  </div>
-  <div class = "row">
-    <h2 id = "tracktime12" ng-if = "main.loadedList[12]">{{main.timeRemainingList[12]}} </h2>
-  </div>
-  <div class = "row">
-    <h2 ng-if = "!main.loadedList[12]">&nbsp;</h2>
-    <audio id ="audio12" ontimeupdate = "document.getElementById('tracktime12').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 12);">
-      <source src="./mp3_files/mptest12.mp3" type="audio/mpeg">
-      Your user agent does not support the HTML5 Audio element.
-    </audio>
-    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
-    <p class="player">
-          <span class = "buttonBox">
-            <a><i id = "play12" class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(12)" ng-if= "main.pausedList[12]"></i></a>
-            <a><i id = "pause12" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(12)" ng-if= "main.playingList[12]"></i></a>
-          </span>
-          <b>|</b>
-          <span class = "sliderBox" id = "sliderBox12" ng-click="addOnClick($event, 12)">
-            <a><i id = "slider12" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[12] + 'px'}"></i></a>
-          </span>
-          <span class = "endBar">
-            <b>|</b>
-          </span>
-    </p>
-  </div>
-
-  <hr class = "break">
-
-  <div class = "row ">
-    <div class = "dateTimeHeading">
-      <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3">
-        <h5 class = "postTitle">and</h5>
-      </div>
-      <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3">
-        <h1 class = "hellotext">D</h1>
-      </div>
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "date">11.02.16</h5>
-      </div>
-    </div>
-  </div>
-  <div class = "row">
-    <h2 id = "tracktime11" ng-if = "main.loadedList[11]">{{main.timeRemainingList[11]}} </h2>
-  </div>
-  <div class = "row">
-    <h2 ng-if = "!main.loadedList[11]">&nbsp;</h2>
-    <audio id ="audio11" ontimeupdate = "document.getElementById('tracktime11').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 11);">
-      <source src="./mp3_files/mptest11.mp3" type="audio/mpeg">
-      Your user agent does not support the HTML5 Audio element.
-    </audio>
-    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
-    <p class="player">
-          <span class = "buttonBox">
-            <a><i id = "play11" class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(11)" ng-if= "main.pausedList[11]"></i></a>
-            <a><i id = "pause11" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(11)" ng-if= "main.playingList[11]"></i></a>
-          </span>
-          <b>|</b>
-          <span class = "sliderBox" id = "sliderBox11" ng-click="addOnClick($event, 11)">
-            <a><i id = "slider11" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[11] + 'px'}"></i></a>
-          </span>
-          <span class = "endBar">
-            <b>|</b>
-          </span>
-    </p>
-  </div>
-
-  <hr class = "break">
-
-  <div class = "row ">
-    <div class = "dateTimeHeading">
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "postTitle">murmurs</h5>
-      </div>
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "date">10.27.16</h5>
-      </div>
-    </div>
-  </div>
-  <div class = "row">
-    <h2 id = "tracktime10" ng-if = "main.loadedList[10]">{{main.timeRemainingList[10]}} </h2>
-  </div>
-  <div class = "row">
-    <h2 ng-if = "!main.loadedList[10]">&nbsp;</h2>
-    <audio id ="audio10" ontimeupdate = "document.getElementById('tracktime10').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 10);">
-      <source src="./mp3_files/mptest10.mp3" type="audio/mpeg">
-      Your user agent does not support the HTML5 Audio element.
-    </audio>
-    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
-    <p class="player">
-          <span class = "buttonBox">
-            <a><i id = "play10" class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(10)" ng-if= "main.pausedList[10]"></i></a>
-            <a><i id = "pause10" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(10)" ng-if= "main.playingList[10]"></i></a>
-          </span>
-          <b>|</b>
-          <span class = "sliderBox" id = "sliderBox10" ng-click="addOnClick($event, 10)">
-            <a><i id = "slider10" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[10] + 'px'}"></i></a>
-          </span>
-          <span class = "endBar">
-            <b>|</b>
-          </span>
-    </p>
-  </div>
-
-  <hr class = "break">
-
-  <div class = "row ">
-    <div class = "dateTimeHeading">
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "postTitle">finish line / drown</h5>
-      </div>
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "date">10.21.16</h5>
-      </div>
-    </div>
-  </div>
-  <div class = "row">
-    <h2 id = "tracktime9" ng-if = "main.loadedList[9]">{{main.timeRemainingList[9]}} </h2>
-  </div>
-  <div class = "row">
-    <h2 ng-if = "!main.loadedList[9]">&nbsp;</h2>
-    <audio id ="audio9" ontimeupdate = "document.getElementById('tracktime9').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 9);">
-      <source src="./mp3_files/mptest9.mp3" type="audio/mpeg">
-      Your user agent does not support the HTML5 Audio element.
-    </audio>
-    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
-    <p class="player">
-          <span class = "buttonBox">
-            <a><i id = "play9" class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(9)" ng-if= "main.pausedList[9]"></i></a>
-            <a><i id = "pause9" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(9)" ng-if= "main.playingList[9]"></i></a>
-          </span>
-          <b>|</b>
-          <span class = "sliderBox" id = "sliderBox9" ng-click="addOnClick($event, 9)">
-            <a><i id = "slider9" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[9] + 'px'}"></i></a>
-          </span>
-          <span class = "endBar">
-            <b>|</b>
-          </span>
-    </p>
-  </div>
-
-  <hr class = "break">
-
-
-
-  <div class = "row ">
-    <div class = "dateTimeHeading">
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "postTitle">way cool baby love</h5>
-      </div>
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-          <h1 class = "hellotext">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O </h1>
-          <h5 class = "date">10.2.16</h5>
+  <div ng-repeat='x in main.fileNames'>
+    <div class = "row">
+      <div class = "dateTimeHeading">
+        <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <h5 class = "postTitle">{{main.songTitles[$index]}}</h5>
+        </div>
+        <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
+          <h5 class = "date">{{main.postDates[$index]}}</h5>
         </div>
       </div>
     </div>
-  </div>
-  <div class = "row">
-    <h2 id = "tracktime8" ng-if = "main.loadedList[8]">{{main.timeRemainingList[8]}} </h2>
-  </div>
-  <div class = "row">
-    <h2 ng-if = "!main.loadedList[8]">&nbsp;</h2>
-    <audio id ="audio8" ontimeupdate = "document.getElementById('tracktime8').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 8);">
-      <source src="./mp3_files/mptest8.mp3" type="audio/mpeg">
-      Your user agent does not support the HTML5 Audio element.
-    </audio>
-    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
-    <p class="player">
-          <span class = "buttonBox">
-            <a><i id = "play8" class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(8)" ng-if= "main.pausedList[8]"></i></a>
-            <a><i id = "pause8" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(8)" ng-if= "main.playingList[8]"></i></a>
-          </span>
-          <b>|</b>
-          <span class = "sliderBox" id = "sliderBox8" ng-click="addOnClick($event, 8)">
-            <a><i id = "slider8" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[8] + 'px'}"></i></a>
-          </span>
-          <span class = "endBar">
-            <b>|</b>
-          </span>
-    </p>
-  </div>
-
-  <hr class = "break">
-
-  <div class = "row ">
-    <div class = "dateTimeHeading">
-      <div class = "col-lg-8 col-md-8 col-sm-8 col-xs-8">
-        <h5 class = "postTitle">sorry for not answering the phone, i'm too busy trying to fly away</h5>
-      </div>
-      <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        <h5 class = "date">10.2.16</h5>
-      </div>
+    <div class = "row">
+      <h2 ng-attr-id="{{'tracktime' + $index}}"  ng-if= "main.loadedList[$index]">{{main.timeRemainingList[$index]}} </h2>
     </div>
-  </div>
-  <div class = "row">
-    <h2 id = "tracktime7" ng-if = "main.loadedList[7]">{{main.timeRemainingList[7]}} </h2>
-  </div>
-  <div class = "row">
-    <h2 ng-if = "!main.loadedList[7]">&nbsp;</h2>
-    <audio id ="audio7" ontimeupdate = "document.getElementById('tracktime7').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 7);">
-      <source src="./mp3_files/mptest7.mp3" type="audio/mpeg">
-      Your user agent does not support the HTML5 Audio element.
-    </audio>
-    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
-    <p class="player">
-          <span class = "buttonBox">
-            <a><i id = "play7" class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(7)" ng-if= "main.pausedList[7]"></i></a>
-            <a><i id = "pause7" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(7)" ng-if= "main.playingList[7]"></i></a>
-          </span>
-          <b>|</b>
-          <span class = "sliderBox" id = "sliderBox7" ng-click="addOnClick($event, 7)">
-            <a><i id = "slider7" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[7] + 'px'}"></i></a>
-          </span>
-          <span class = "endBar">
+    <div class = "row">
+      <h2 ng-if = "!main.loadedList[$index]">&nbsp;</h2>
+      <audio ng-attr-id="{{'audio' + $index}}" ontimeupdate = "onTimeUpdate(this)">
+        <source src= {{x}} type="audio/mpeg">
+        Your user agent does not support the HTML5 Audio element.
+      </audio>
+      <p class="player">
+            <span class = "buttonBox">
+              <a><i ng-attr-id="{{'play' + $index}}"  class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play($index)" ng-if= "main.pausedList[$index]"></i></a>
+              <a><i ng-attr-id="{{'pause' + $index}}" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause($index)" ng-if= "main.playingList[$index]"></i></a>
+            </span>
             <b>|</b>
-          </span>
-    </p>
-  </div>
-
-  <hr class = "break">
-
-  <div class = "row ">
-    <div class = "dateTimeHeading">
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "postTitle">Haunt me (x 3)</h5>
-      </div>
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-          <h5 class = "date">9.23.16</h5>
-        </div>
-      </div>
+            <span class = "sliderBox" ng-attr-id="{{'sliderBox' + $index}}"  ng-click="addOnClick($event, $index)">
+              <a><i ng-attr-id="{{'slider' + $index}}" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[$index] + 'px'}"></i></a>
+            </span>
+            <span class = "endBar">
+              <b>|</b>
+            </span>
+      </p>
     </div>
+    <hr class = "break">
   </div>
-  <div class = "row">
-    <h2 id = "tracktime6" ng-if = "main.loadedList[6]">{{main.timeRemainingList[6]}} </h2>
-  </div>
-  <div class = "row">
-    <h2 ng-if = "!main.loadedList[6]">&nbsp;</h2>
-    <audio id ="audio6" ontimeupdate = "document.getElementById('tracktime6').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 6);">
-      <source src="./mp3_files/mptest6.mp3" type="audio/mpeg">
-      Your user agent does not support the HTML5 Audio element.
-    </audio>
-    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
-    <p class="player">
-          <span class = "buttonBox">
-            <a><i id = "play6" class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(6)" ng-if= "main.pausedList[6]"></i></a>
-            <a><i id = "pause6" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(6)" ng-if= "main.playingList[6]"></i></a>
-          </span>
-          <b>|</b>
-          <span class = "sliderBox" id = "sliderBox6" ng-click="addOnClick($event, 6)">
-            <a><i id = "slider6" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[6] + 'px'}"></i></a>
-          </span>
-          <span class = "endBar">
-            <b>|</b>
-          </span>
-    </p>
-  </div>
-
-  <hr class = "break">
-
-
-  <div class = "row ">
-    <div class = "dateTimeHeading">
-      <div class = "col-lg-4 col-md-4 col-sm-4 col-xs-4">
-        <h5 class = "postTitle">So Into You</h5>
-      </div>
-      <div class = "col-lg-2 col-md-2 col-sm-2 col-xs-2">
-        <h1 class = "hellotext">L</h1>
-      </div>
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-          <h5 class = "date">9.22.16</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class = "row">
-    <h2 id = "tracktime5" ng-if = "main.loadedList[5]">{{main.timeRemainingList[5]}} </h2>
-  </div>
-  <div class = "row">
-    <h2 ng-if = "!main.loadedList[5]">&nbsp;</h2>
-    <audio id ="audio5" ontimeupdate = "document.getElementById('tracktime5').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 5);">
-      <source src="./mp3_files/mptest5.mp3" type="audio/mpeg">
-      Your user agent does not support the HTML5 Audio element.
-    </audio>
-    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
-    <p class="player">
-          <span class = "buttonBox">
-            <a><i id = "play5" class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(5)" ng-if= "main.pausedList[5]"></i></a>
-            <a><i id = "pause5" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(5)" ng-if= "main.playingList[5]"></i></a>
-          </span>
-          <b>|</b>
-          <span class = "sliderBox" id = "sliderBox5" ng-click="addOnClick($event, 5)">
-            <a><i id = "slider5" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[5] + 'px'}"></i></a>
-          </span>
-          <span class = "endBar">
-            <b>|</b>
-          </span>
-    </p>
-  </div>
-
-  <hr class = "break">
-
-  <div class = "row ">
-    <div class = "dateTimeHeading">
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "postTitle">Six</h5>
-      </div>
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h1 class = "hellotext">W </h1>
-        <h5 class = "date">9.22.16</h5>
-      </div>
-    </div>
-  </div>
-  <div class = "row">
-    <h2 id = "tracktime4" ng-if = "main.loadedList[4]">{{main.timeRemainingList[4]}} </h2>
-  </div>
-  <div class = "row">
-    <h2 ng-if = "!main.loadedList[4]">&nbsp;</h2>
-    <audio id ="audio4" ontimeupdate = "document.getElementById('tracktime4').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 4);">
-      <source src="./mp3_files/mptest4.mp3" type="audio/mpeg">
-      Your user agent does not support the HTML5 Audio element.
-    </audio>
-    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
-    <p class="player">
-          <span class = "buttonBox">
-            <a><i id = "play4" class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(4)" ng-if= "main.pausedList[4]"></i></a>
-            <a><i id = "pause4" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(4)" ng-if= "main.playingList[4]"></i></a>
-          </span>
-          <b>|</b>
-          <span class = "sliderBox" id = "sliderBox4" ng-click="addOnClick($event, 4)">
-            <a><i id = "slider4" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[4] + 'px'}"></i></a>
-          </span>
-          <span class = "endBar">
-            <b>|</b>
-          </span>
-    </p>
-  </div>
-
-  <hr class = "break">
-
-  <div class = "row ">
-    <div class = "dateTimeHeading">
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "postTitle">PERFECT</h5>
-      </div>
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "date">9.7.16</h5>
-      </div>
-    </div>
-  </div>
-  <div class = "row">
-    <h2 id = "tracktime3" ng-if = "main.loadedList[3]">{{main.timeRemainingList[3]}} </h2>
-  </div>
-  <div class = "row">
-    <h2 ng-if = "!main.loadedList[3]">&nbsp;</h2>
-    <audio id ="audio3" ontimeupdate = "document.getElementById('tracktime3').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 3);">
-      <source src="./mp3_files/mptest3.mp3" type="audio/mpeg">
-      Your user agent does not support the HTML5 Audio element.
-    </audio>
-    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
-    <p class="player">
-          <span class = "buttonBox">
-            <a><i id = "play3" class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(3)" ng-if= "main.pausedList[3]"></i></a>
-            <a><i id = "pause3" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(3)" ng-if= "main.playingList[3]"></i></a>
-          </span>
-          <b>|</b>
-          <span class = "sliderBox" id = "sliderBox3" ng-click="addOnClick($event, 3)">
-            <a><i id = "slider3" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[3] + 'px'}"></i></a>
-          </span>
-          <span class = "endBar">
-            <b>|</b>
-          </span>
-    </p>
-  </div>
-
-  <hr class = "break">
-
-  <div class = "row ">
-    <div class = "dateTimeHeading">
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "postTitle">Saint Pablo</h5>
-      </div>
-      <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3" style = "text-align: right;">
-        <h1 class = "hellotext">O </h1>
-      </div>
-      <div class = "col-lg-3 col-md-3 col-sm-3 col-xs-3">
-        <h5 class = "date">9.6.16</h5>
-      </div>
-    </div>
-  </div>
-  <div class = "row">
-    <h2 id = "tracktime2" ng-if = "main.loadedList[2]">{{main.timeRemainingList[2]}} </h2>
-  </div>
-  <div class = "row">
-    <h2 ng-if = "!main.loadedList[2]">&nbsp;</h2>
-    <audio id ="audio2" ontimeupdate = "document.getElementById('tracktime2').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 2);">
-      <source src="./mp3_files/mptest2.mp3" type="audio/mpeg">
-      Your user agent does not support the HTML5 Audio element.
-    </audio>
-    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
-    <p class="player">
-          <span class = "buttonBox">
-            <a><i id = "play2" class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(2)" ng-if= "main.pausedList[2]"></i></a>
-            <a><i id = "pause2" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(2)" ng-if= "main.playingList[2]"></i></a>
-          </span>
-          <b>|</b>
-          <span class = "sliderBox" id = "sliderBox2" ng-click="addOnClick($event, 2)">
-            <a><i id = "slider2" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[2] + 'px'}"></i></a>
-          </span>
-          <span class = "endBar">
-            <b>|</b>
-          </span>
-    </p>
-  </div>
-
-  <hr class = "break">
-
-  <div class = "row ">
-    <div class = "dateTimeHeading">
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "postTitle">Bitte Bitte Orca</h5>
-      </div>
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "date">9.6.16</h5>
-      </div>
-    </div>
-  </div>
-  <div class = "row">
-    <h2 id = "tracktime1" ng-if = "main.loadedList[1]">{{main.timeRemainingList[1]}} </h2>
-  </div>
-  <div class = "row">
-    <h2 ng-if = "!main.loadedList[1]">&nbsp;</h2>
-    <audio id ="audio1" ontimeupdate = "document.getElementById('tracktime1').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 1);">
-      <source src="./mp3_files/mptest1.mp3" type="audio/mpeg">
-      Your user agent does not support the HTML5 Audio element.
-    </audio>
-    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
-    <p class="player">
-          <span class = "buttonBox">
-            <a><i id = "play1" class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(1)" ng-if= "main.pausedList[1]"></i></a>
-            <a><i id = "pause1" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(1)" ng-if= "main.playingList[1]"></i></a>
-          </span>
-          <b>|</b>
-          <span class = "sliderBox" id = "sliderBox1" ng-click="addOnClick($event, 1)">
-            <a><i id = "slider1" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[1] + 'px'}"></i></a>
-          </span>
-          <span class = "endBar">
-            <b>|</b>
-          </span>
-    </p>
-  </div>
-
-  <hr class = "break">
-
-  <div class = "row ">
-    <div class = "dateTimeHeading">
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "postTitle">At Your Best (You Are Love)</h5>
-      </div>
-      <div class = "col-lg-6 col-md-6 col-sm-6 col-xs-6">
-        <h5 class = "date">9.6.16</h5>
-      </div>
-    </div>
-  </div>
-  <div class = "row">
-    <h2 id = "tracktime0" ng-if = "main.loadedList[0]">{{main.timeRemainingList[0]}} </h2>
-  </div>
-  <div class = "row">
-    <h2 ng-if = "!main.loadedList[0]">&nbsp;</h2>
-    <audio id ="audio0" ontimeupdate = "document.getElementById('tracktime0').innerHTML = Math.floor((this.duration - this.currentTime)); moveSlider(this.currentTime, this.duration, this.ended, 0);">
-      <source src="./mp3_files/mptest0.mp3" type="audio/mpeg">
-      Your user agent does not support the HTML5 Audio element.
-    </audio>
-    <!-- <button type="button" onclick="aud_play_pause()">Play/Pause</button> -->
-    <p class="player">
-          <span class = "buttonBox">
-            <a><i id = "play0" class="fa fa-fw fa-play" aria-hidden="true" ng-click="main.aud_play(0)" ng-if= "main.pausedList[0]"></i></a>
-            <a><i id = "pause0" class="fa fa-pause fa-fw" aria-hidden="true" ng-click="main.aud_pause(0)" ng-if= "main.playingList[0]"></i></a>
-          </span>
-          <b>|</b>
-          <span class = "sliderBox" id = "sliderBox0" ng-click="addOnClick($event, 0)">
-            <a><i id = "slider0" class="fa fa-circle" aria-hidden="true" ng-style="{paddingLeft: sliderLeft[0] + 'px'}"></i></a>
-          </span>
-          <span class = "endBar">
-            <b>|</b>
-          </span>
-    </p>
-  </div>
-
-  <!-- <hr class = "break"> -->
 
   <footer id="footer" class="contact content-section text-center">
       <div class="container text-center">
-        <br></br><br></br><br></br><br></br>
+        <br></br><br></br><br></br>
       </div>
   </footer>
 
@@ -620,7 +104,6 @@
   <!-- <script src="app.routes.js"></script> -->
   <!-- Import all controllers too -->
   <script src="controllers/mainController.js"></script>
-
   <!-- Custom Theme JavaScript -->
   <!-- <script src="js/grayscale.js"></script> -->
 </body>

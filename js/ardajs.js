@@ -16,6 +16,12 @@ function eventFire(el, etype){
   }
 }
 
+function onTimeUpdate(audio) {
+  idx = audio.id.substring('audio'.length);
+  document.getElementById('tracktime' + idx).innerHTML = Math.floor((audio.duration - audio.currentTime));
+  moveSlider(audio.currentTime, audio.duration, audio.ended, parseInt(idx));
+}
+
 function moveSlider(ct, d, e, index) {
   angular.element('body').controller().updateSliderLeft(ct, d, e, index);
 }

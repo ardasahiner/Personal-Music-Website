@@ -7,7 +7,7 @@ angular.module('mainController', [])
   var count = 0;
 
   vm.onFirstClick = function() {
-    for (index = 0; index < vm.audioList.length; index ++) {
+    for (index = 0; index < vm.numSongs; index ++) {
       if (index != vm.activeAudioIndex || !vm.playingList[vm.activeAudioIndex]) {
         vm.audioList[index].play();
         vm.audioList[index].pause();
@@ -18,19 +18,9 @@ angular.module('mainController', [])
   vm.updateOnRight = function() {
     if (vm.playingList[vm.activeAudioIndex]) {
       vm.aud_pause(vm.activeAudioIndex);
-      if (vm.activeAudioIndex > 0) {
-
-        vm.aud_play(vm.activeAudioIndex - 1);
-      } else {
-        vm.aud_play(vm.audioList.length - 1);
-      }
+      vm.aud_play((vm.activeAudioIndex + 1) % vm.numSongs);
     } else {
-      if (vm.activeAudioIndex > 0) {
-
-        vm.activeAudioIndex = vm.activeAudioIndex - 1;
-      } else {
-        vm.activeAudioIndex = 0;
-      }
+      vm.activeAudioIndex = (vm.activeAudioIndex + 1) % vm.numSongs;
       vm.activeAudio = vm.audioList[vm.activeAudioIndex];
     }
 
@@ -41,15 +31,15 @@ angular.module('mainController', [])
 
     var prevTime = vm.activeAudio.currentTime;
     vm.activeAudio.currentTime = 0;
+    var next = (vm.activeAudioIndex - 1 + vm.numSongs) % vm.numSongs;
 
     if (prevTime < 1) {
 
       if (vm.playingList[vm.activeAudioIndex]) {
         vm.aud_pause(vm.activeAudioIndex);
-        vm.aud_play((vm.activeAudioIndex + 1) % vm.audioList.length);
+        vm.aud_play(next);
       } else {
-
-        vm.activeAudioIndex = (vm.activeAudioIndex + 1) % vm.audioList.length;
+        vm.activeAudioIndex = next;
         vm.activeAudio = vm.audioList[vm.activeAudioIndex];
       }
     }
@@ -82,13 +72,12 @@ angular.module('mainController', [])
       if ((current - vm.lastEndTime > 2)){
         vm.lastEndTime = current;
 
-        if (vm.activeAudioIndex > 0) {
-          vm.activeAudioIndex -= 1;
+        if (vm.activeAudioIndex < vm.numSongs - 1) {
+          vm.activeAudioIndex += 1;
           vm.activeAudio = vm.audioList[vm.activeAudioIndex];
           document.getElementById('play'+vm.activeAudioIndex).click();
         } else {
-
-          vm.activeAudioIndex = vm.audioList.length - 1;
+          vm.activeAudioIndex = 0;
           vm.activeAudio = vm.audioList[vm.activeAudioIndex];
         }
       }
@@ -114,19 +103,13 @@ angular.module('mainController', [])
 
       vm.audioList[index].currentTime = (event.offsetX / widthInt) * vm.durationList[index];
       vm.timeRemainingList[index] = Math.floor(vm.audioList[index].duration - vm.audioList[index].currentTime);
-
-      // vm.activeAudio = vm.audioList[index];
-      // vm.activeAudioIndex = index;
   };
 
   vm.aud_play = function(index) {
     if (!vm.playingList[index]) {
-
-      if (vm.activeAudio != null && vm.activeAudioIndex !== index) {
-
+      if (vm.activeAudio !== null && vm.activeAudioIndex !== index) {
         vm.aud_pause(vm.activeAudioIndex);
       }
-
       vm.activeAudio = vm.audioList[index];
       vm.activeAudioIndex = index;
       vm.audioList[index].play();
@@ -144,7 +127,7 @@ angular.module('mainController', [])
   };
 
   vm.getDuration = function() {
-    for (var i = 0; i < vm.audioList.length; i ++ ) {
+    for (var i = 0; i < vm.numSongs; i ++ ) {
       if (!vm.loadedList[i] && vm.audioList[i].readyState > 0) {
         vm.durationList[i] = vm.audioList[i].duration;
         vm.timeRemainingList[i] = Math.floor(vm.audioList[i].duration - vm.audioList[i].currentTime);
@@ -158,9 +141,34 @@ angular.module('mainController', [])
     }
   }
 
-  vm.startUp = function(numSongs) {
+  vm.loadSongs = function() {
+    try {
+      for (var i = 0; i < vm.numSongs; i ++ ) {
+        vm.audioList[i] = document.getElementById("audio" + i);
+      }
+      vm.getDuration();
+    } catch(err) {
+      setTimeout(function(){
+        vm.loadSongs();
+      }, 1000);
+    }
+  }
 
-    vm.audioList = [];
+  vm.startUp = function(numSongs) {
+    vm.numSongs = numSongs;
+    vm.fileNames = [];
+    for (var i = 0; i < numSongs; i++) {
+
+      vm.fileNames[i] = './mp3_files/mptest' + i + '.mp3'
+    }
+    vm.fileNames = vm.fileNames.reverse();
+    vm.postDates = ['9.6.16', '9.6.16', '9.6.16', '9.7.16', '9.22.16', '9.22.16', '9.23.16',
+                    '10.2.16', '10.2.16', '10.21.16', '10.27.16', '11.02.16', '11.21.16', '12.21.16', '9.23.17', '9.23.17'].reverse();
+    vm.songTitles = ['At Your Best (You Are Love)', 'Bitte Bitte Orca', 'Saint Pablo',
+                    'PERFECT', 'Six', 'So Into You', 'Haunt me (x 3)',
+                    'sorry for not answering the phone, i\'m too busy trying to fly away',
+                    'Way Cool Baby Love', 'Finish Line / Drown', 'Murmurs', 'And', 'Melrose', 'cl0ser', 'Good Morning (Swarvy Redux)', 'Radar/2am'].reverse();
+
     vm.loadedList = [];
     vm.playingList = [];
     vm.pausedList = [];
@@ -169,7 +177,6 @@ angular.module('mainController', [])
     $scope.sliderLeft = [];
 
     for (var i = 0; i < numSongs; i++) {
-      vm.audioList[i] = document.getElementById("audio" + i);
       vm.loadedList[i] = false;
       vm.playingList[i] = false;
       vm.pausedList[i] = true;
@@ -178,10 +185,10 @@ angular.module('mainController', [])
       $scope.sliderLeft[i] = 0;
     }
 
-    vm.activeAudioIndex = numSongs - 1;
+    vm.activeAudioIndex = 0;
+    vm.audioList = ['dummy'];
     vm.activeAudio = vm.audioList[vm.activeAudioIndex]; // default to last
+    vm.loadSongs()
   }
-
-  vm.startUp(14);
-  vm.getDuration();
+  vm.startUp(16);
 });
