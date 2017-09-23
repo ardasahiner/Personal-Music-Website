@@ -62,7 +62,7 @@
     </div>
     <div class = "row">
       <h2 ng-if = "!main.loadedList[$index]">&nbsp;</h2>
-      <audio ng-attr-id="{{'audio' + $index}}" ontimeupdate = "onTimeUpdate(this)">
+      <audio ng-attr-id="{{'audio' + $index}}" ontimeupdate = "onTimeUpdate(this)" preload='metadata'>
         <source src= {{x}} type="audio/mpeg">
         Your user agent does not support the HTML5 Audio element.
       </audio>
