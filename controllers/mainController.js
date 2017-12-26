@@ -136,7 +136,7 @@ angular.module('mainController', [])
       } else if (vm.audioList[i].readyState == 0){
         setTimeout(function(){
           vm.getDuration();
-        }, 1000);
+        }, 5000);
       }
     }
   }
@@ -163,11 +163,11 @@ angular.module('mainController', [])
     }
     vm.fileNames = vm.fileNames.reverse();
     vm.postDates = ['9.6.16', '9.6.16', '9.6.16', '9.7.16', '9.22.16', '9.22.16', '9.23.16',
-                    '10.2.16', '10.2.16', '10.21.16', '10.27.16', '11.02.16', '11.21.16', '12.21.16', '9.23.17', '9.23.17'].reverse();
+                    '10.2.16', '10.2.16', '10.21.16', '10.27.16', '11.02.16', '11.21.16', '12.21.16', '9.23.17', '9.23.17', '12.26.17', '12.26.17'].reverse();
     vm.songTitles = ['At Your Best (You Are Love)', 'Bitte Bitte Orca', 'Saint Pablo',
                     'PERFECT', 'Six', 'So Into You', 'Haunt me (x 3)',
                     'sorry for not answering the phone, i\'m too busy trying to fly away',
-                    'Way Cool Baby Love', 'Finish Line / Drown', 'Murmurs', 'And', 'Melrose', 'cl0ser', 'Good Morning (Swarvy Redux)', 'Radar/2am'].reverse();
+                    'Way Cool Baby Love', 'Finish Line / Drown', 'Murmurs', 'And', 'Melrose', 'cl0ser', 'Good Morning (Swarvy Redux)', 'Radar/2am', 'Adorn', 'Never Too Much'].reverse();
 
     vm.loadedList = [];
     vm.playingList = [];
@@ -190,5 +190,5 @@ angular.module('mainController', [])
     vm.activeAudio = vm.audioList[vm.activeAudioIndex]; // default to last
     vm.loadSongs()
   }
-  vm.startUp(16);
+  vm.startUp(18);
 });
