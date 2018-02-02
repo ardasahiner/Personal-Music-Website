@@ -185,5 +185,5 @@ angular.module('stuff', [])
       vm.activeAudio = vm.audioList[vm.activeAudioIndex];
       vm.loadSongs()
     }
-    vm.startUp(7);
+    vm.startUp(9);
 });
