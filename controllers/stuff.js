@@ -156,13 +156,13 @@ angular.module('stuff', [])
 
     vm.startUp = function(numSongs) {
       vm.numSongs = numSongs;
-      vm.fileNames = ['howsoft.mp3', 'lb1.mp3', 'redbone.mp3', '12345.mp3', 'futility.mp3', 'stutt.mp3', 'aes.mp3'].reverse();
+      vm.fileNames = ['howsoft.mp3', 'lb1.mp3', 'redbone.mp3', '12345.mp3', 'futility.mp3', 'stutt.mp3', 'flint.mp3', 'aes.mp3', 'off.mp3'].reverse();
       for (var i = 0; i < numSongs; i++) {
 
         vm.fileNames[i] = '../mp3_files/' + vm.fileNames[i];
       }
-      vm.postDates = ['4.17.17', '6.15.17', '7.8.17', '7.16.17','8.16.17', '8.17.17', '12.26.17'].reverse();
-      vm.songTitles = ['how soft', 'lb1', 'redbone', '12345', 'futility', 'stutt', 'aes'].reverse();
+      vm.postDates = ['4.17.17', '6.15.17', '7.8.17', '7.16.17','8.16.17', '8.17.17', '9.29.17', '12.26.17', '2.1.18'].reverse();
+      vm.songTitles = ['how soft', 'lb1', 'redbone', '12345', 'futility', 'stutt', 'flint', 'aes', 'off'].reverse();
 
       vm.loadedList = [];
       vm.playingList = [];
